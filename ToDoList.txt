@@ -1,0 +1,19 @@
+Pages:
+-Index Page
+-User Page
+-Recipe Page
+-About Page
+-Contact Page
+
+Database:
+-User Table
+-Recipe Table
+-Tag Table
+
+Stored Procedures:
+-Add New Recipe
+-Delete Recipe
+-Add User
+-Delete User
+-Add Tag to Recipe
+-Remove Tag from Recipe
