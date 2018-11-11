@@ -1,0 +1,119 @@
+-- ****************** SqlDBM: Microsoft SQL Server ******************
+-- ******************************************************************
+
+-- ************************************** [User]
+
+CREATE TABLE [User]
+(
+ [UserID]   varchar(50) NOT NULL ,
+ [JoinDate] date NOT NULL ,
+ [URL]      varchar(50) NOT NULL ,
+ [Bio]      varchar(500) NULL ,
+
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([UserID] ASC)
+);
+GO
+
+
+
+
+
+
+
+
+-- ************************************** [Tags]
+
+CREATE TABLE [Tags]
+(
+ [Tag] varchar(50) NOT NULL ,
+ [URL] varchar(50) NOT NULL ,
+
+ CONSTRAINT [PK_Page] PRIMARY KEY CLUSTERED ([Tag] ASC)
+);
+GO
+
+
+
+
+
+
+
+
+-- ************************************** [Recipes]
+
+CREATE TABLE [Recipes]
+(
+ [ID]           int NOT NULL ,
+ [URL]          varchar(50) NOT NULL ,
+ [Date]         datetime NOT NULL ,
+ [Tags]         varchar(500) NULL ,
+ [UserID]       varchar(50) NOT NULL ,
+ [Steps]        varchar(max) NOT NULL ,
+ [Instructions] varchar(max) NOT NULL ,
+
+ CONSTRAINT [PK_Recipes] PRIMARY KEY CLUSTERED ([ID] ASC, [URL] ASC)
+);
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ****************** SqlDBM: MySQL ******************;
+-- ***************************************************;
+
+
+-- ************************************** `User`
+
+CREATE TABLE `User`
+(
+ `UserID`   varchar(45) NOT NULL ,
+ `URL`      varchar(45) NOT NULL ,
+ `JoinDate` date NOT NULL ,
+ `Bio`      varchar(500) ,
+PRIMARY KEY (`UserID`, `URL`)
+);
+
+
+
+
+
+
+-- ************************************** `Tags`
+
+CREATE TABLE `Tags`
+(
+ `Tag` varchar(45) NOT NULL ,
+ `URL` varchar(45) NOT NULL ,
+PRIMARY KEY (`Tag`)
+);
+
+
+
+
+
+
+-- ************************************** `REcipes`
+
+CREATE TABLE `Recipes`
+(
+ `ID`           int NOT NULL ,
+ `URL`          varchar(45) NOT NULL ,
+ `Date`         datetime NOT NULL ,
+ `Tags`         varchar(500) NOT NULL ,
+ `UserID`       varchar(45) NOT NULL ,
+ `Steps`        mediumtext NOT NULL ,
+ `Instructions` mediumtext NOT NULL ,
+PRIMARY KEY (`ID`, `URL`)
+);
