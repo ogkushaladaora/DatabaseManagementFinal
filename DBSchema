@@ -1,0 +1,37 @@
+Schema:
+-- ************************************** [User]
+
+CREATE TABLE [User]
+(
+ [UserID]   varchar(50) NOT NULL ,
+ [JoinDate] date NOT NULL ,
+ [URL]      varchar(50) NOT NULL ,
+
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([UserID] ASC)
+);
+GO
+
+-- ************************************** [Recipes]
+
+CREATE TABLE [Recipes]
+(
+ [ID]     int NOT NULL ,
+ [URL]    varchar(50) NOT NULL ,
+ [Date]   datetime NOT NULL ,
+ [Tags]   varchar(500) NULL ,
+ [UserID] varchar(50) NOT NULL ,
+
+ CONSTRAINT [PK_Recipes] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+GO
+
+-- ************************************** [Tags]
+
+CREATE TABLE [Tags]
+(
+ [Tag] varchar(50) NOT NULL ,
+ [URL] int NOT NULL ,
+
+ CONSTRAINT [PK_Page] PRIMARY KEY CLUSTERED ([Tag] ASC)
+);
+GO
